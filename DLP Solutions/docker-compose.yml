@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: postgres:alpine
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: dlp
+      POSTGRES_PASSWORD: dlp
+      POSTGRES_DB: dlp
+    volumes:
+      - dlp-db:/var/lib/postgresql/data
+
+volumes:
+  dlp-db:
